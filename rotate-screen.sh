@@ -2,6 +2,7 @@
 # This script rotates the screen and touchscreen input 90 degrees each time it is called, 
 # also disables the touchpad, and enables the virtual keyboard accordingly
 
+# by Ruben Barkow: https://gist.github.com/rubo77/daa262e0229f6e398766
 
 #### configuration
 # find your Touchscreen and Touchpad device with `xinput`
