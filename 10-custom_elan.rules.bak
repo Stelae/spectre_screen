@@ -1,0 +1,3 @@
+##This is a workaround to the screen (with the attributes below) disconnecting and reconnecting randomly,
+#thus resetting all xinput customisations (such as remapping of the stylus buttons).
+ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="2073", RUN+="/home/stelios/dev/spectre_screen/stylus_button_remap.sh"
