@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Tablet Screen bak to normal
+Icon=tablet.png
+Exec=~/dev/spectre_screen/rubo-rotate-screen.sh -n

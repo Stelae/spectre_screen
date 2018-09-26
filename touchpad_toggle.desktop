@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Toggle touchpad
+Comment=Toggle touchpad
+Icon=input-touchpad.png
+Exec=~/dev/spectre_screen/touchpad_toggle.sh

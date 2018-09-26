@@ -7,6 +7,7 @@
 #### configuration
 # find your Touchscreen and Touchpad device with `xinput`
 TouchscreenDevice='ELAN Touchscreen'
+TouchscreenPen='ELAN Touchscreen Pen'
 TouchpadDevice='SynPS/2 Synaptics TouchPad'
 
 if [ "$1" = "--help"  ] || [ "$1" = "-h"  ] ; then
@@ -56,14 +57,16 @@ then
   echo "Upside down"
   xrandr -o inverted
   xinput set-prop "$TouchscreenDevice" 'Coordinate Transformation Matrix' $inverted
+  xinput set-prop "$TouchscreenPen" 'Coordinate Transformation Matrix' $inverted
   xinput disable "$TouchpadDevice"
   # Remove hashtag below if you want pop-up the virtual keyboard  
-  #onboard &
+  onboard &
 elif [ $screenMatrix == $inverted_float ] && [ "$1" != "-j" ] && [ "$1" != "-n" ]
 then
   echo "90° to the left"
   xrandr -o left
   xinput set-prop "$TouchscreenDevice" 'Coordinate Transformation Matrix' $left
+  xinput set-prop "$TouchscreenPen" 'Coordinate Transformation Matrix' $left
   xinput disable "$TouchpadDevice"
   #killall onboard
 elif [ $screenMatrix == $left_float ] && [ "$1" != "-j" ] && [ "$1" != "-n" ]
@@ -71,12 +74,14 @@ then
   echo "90° to the right"
   xrandr -o right
   xinput set-prop "$TouchscreenDevice" 'Coordinate Transformation Matrix' $right
+  xinput set-prop "$TouchscreenPen" 'Coordinate Transformation Matrix' $right
   xinput disable "$TouchpadDevice"
   #killall onboard
 else
   echo "Back to normal"
   xrandr -o normal
   xinput set-prop "$TouchscreenDevice" 'Coordinate Transformation Matrix' $normal
+  xinput set-prop "$TouchscreenPen" 'Coordinate Transformation Matrix' $normal
   xinput enable "$TouchpadDevice"
   #killall onboard
 fi

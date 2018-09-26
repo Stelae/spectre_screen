@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Toggle Finger Touch
+Comment=Toggle touchscreen finger touch
+Icon=input-tablet.png
+Exec=~/dev/spectre_screen/toggle_finger_touch.sh
