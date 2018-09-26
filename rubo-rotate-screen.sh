@@ -2,7 +2,8 @@
 # This script rotates the screen and touchscreen input 90 degrees each time it is called, 
 # also disables the touchpad, and enables the virtual keyboard accordingly
 
-# by Ruben Barkow: https://gist.github.com/rubo77/daa262e0229f6e398766
+# by Stelae (https://github.com/Stelae/spectre_screen)
+# based on script by Ruben Barkow: https://gist.github.com/rubo77/daa262e0229f6e398766
 
 #### configuration
 # find your Touchscreen and Touchpad device with `xinput`
@@ -59,8 +60,8 @@ then
   xinput set-prop "$TouchscreenDevice" 'Coordinate Transformation Matrix' $inverted
   xinput set-prop "$TouchscreenPen" 'Coordinate Transformation Matrix' $inverted
   xinput disable "$TouchpadDevice"
-  # Remove hashtag below if you want pop-up the virtual keyboard  
-  onboard &
+  # Remove hashtag below if you want pop-up the virtual keyboard (Onboard for Gnome) 
+  #onboard &
 elif [ $screenMatrix == $inverted_float ] && [ "$1" != "-j" ] && [ "$1" != "-n" ]
 then
   echo "90° to the left"
